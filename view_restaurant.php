@@ -19,14 +19,17 @@
   {
     die(sqlsrv_errors());
   }
+  
+  echo "<table border="1">";
   while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC))
   {
-    echo "<table><tr>";
+    echo "<tr>";
     echo "<td>". $row['restaurant_id'] . "</td>";
     echo "<td>". $row['restaurant_name'] ."</td>";
     echo "<td>". $row['restaurant_address'] . "</td>";
     echo "<td>". $row['restaurant_phone'] . "</td>";
-    echo "</tr></table>";
+    echo "</tr>";
   }
+  echo "</table>";
   sqlsrv_free_stmt($getResults);
 ?>
