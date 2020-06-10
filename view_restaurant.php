@@ -11,7 +11,7 @@
     die("Error connection: ".sqlsrv_errors());
   }
   else{
-    echo "DB connected";
+    echo "DB connected</br>";
   }
   $tsql= "SELECT * FROM [dbo].[restaurant]";
   $getResults= sqlsrv_query($conn, $tsql);
